@@ -1,0 +1,8 @@
+ WITH customer_monthly_sale AS (
+ select MONTHNAME(O.ORD_DATE),YEAR(O.ORD_DATE),C.CUST_CODE,C.CUST_NAME,SUM(O.ORD_AMOUNT) SUM_ORD_AMT 
+from {{ref("orders_stg")}} O 
+JOIN {{ref("customer_stg")}} C ON C.AGENT_CODE = O.AGENT_CODE 
+ GROUP BY MONTHNAME(O.ORD_DATE),YEAR(O.ORD_DATE), C.CUST_CODE,C.CUST_NAME
+ ORDER BY MONTHNAME(O.ORD_DATE),YEAR(O.ORD_DATE), C.CUST_CODE,C.CUST_NAME
+)
+select * from customer_monthly_sale
