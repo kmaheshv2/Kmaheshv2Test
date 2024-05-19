@@ -1,0 +1,7 @@
+sources:
+  - name: MYSTAGE
+    database: MYFIRSTDB
+    schema: STAGE
+    tables:
+      - name: AGT
+        identifier: AGENTS

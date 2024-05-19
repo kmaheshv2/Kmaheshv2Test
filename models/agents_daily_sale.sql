@@ -1,8 +1,10 @@
-WITH agent_daily_sale AS (
-select A.AGENT_CODE,AGENT_NAME,ORD_DATE,SUM(O.ORD_AMOUNT) SUM_ORD_AMT 
-from ORDERS_STG O 
-JOIN AGENTS_STG A ON A.AGENT_CODE = O.AGENT_CODE
- GROUP BY A.AGENT_CODE,AGENT_NAME,O.ORD_DATE
- ORDER BY A.AGENT_CODE,O.ORD_DATE
- )
- SELECT * FROM agent_daily_sale
+with
+    agent_daily_sale as (
+        select a.agent_code, agent_name, ord_date, sum(o.ord_amount) sum_ord_amt
+        from {{ ref("orders_stg") }} o
+        join {{ ref("agents_stg") }} a on a.agent_code = o.agent_code
+        group by a.agent_code, agent_name, o.ord_date
+        order by a.agent_code, o.ord_date
+    )
+select *
+from agent_daily_sale
