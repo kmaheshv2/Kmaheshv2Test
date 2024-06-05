@@ -1,0 +1,6 @@
+models:
+  - name: agents_stg
+    columns:
+      - name: AGENT_NAME
+        tests:
+          - validateField

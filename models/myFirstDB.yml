@@ -5,3 +5,5 @@ sources:
     tables:
       - name: AGT
         identifier: AGENTS
+      - name: CUST
+        identifier: CUSTOMER
