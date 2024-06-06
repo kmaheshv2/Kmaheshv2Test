@@ -8,3 +8,5 @@
  }}
  select * from {{ source("MYSTAGE","CUST") }}
  {% endsnapshot%}
+
+ 
