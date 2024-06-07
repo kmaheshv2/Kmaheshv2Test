@@ -7,3 +7,5 @@ sources:
         identifier: AGENTS
       - name: CUST
         identifier: CUSTOMER
+      - name: ORD
+        identifier: ORDERS
