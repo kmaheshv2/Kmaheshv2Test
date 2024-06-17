@@ -1,0 +1,9 @@
+models:
+  - name: agents_stg
+    description: All Agent source data.
+    columns:
+      - name: COMMISSION
+        tests:
+          - not_null:
+              - accepted_values:
+                  quote: false
