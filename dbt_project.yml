@@ -16,7 +16,6 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-logs-paths: ["log"]
 
 clean-targets: # directories to be removed by `dbt clean`
   - "target"
