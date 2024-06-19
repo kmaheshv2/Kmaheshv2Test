@@ -1,0 +1,4 @@
+sources:
+  - name: MYSTAGE
+    database: MYFIRSTDB
+    schema: TARGET
