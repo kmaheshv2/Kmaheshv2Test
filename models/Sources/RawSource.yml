@@ -1,6 +1,6 @@
 sources:
   - name: MYSTAGE
-    database: MYFIRSTDB
+    database: ANALYTICS_DB
     schema: STAGE
     tables:
       - name: AGT
