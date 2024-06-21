@@ -5,6 +5,10 @@ sources:
     tables:
       - name: AGT
         identifier: AGENTS
+        columns:
+          - name: agent_name
+            tests:
+              - unique
       - name: CUST
         identifier: CUSTOMER
       - name: ORD

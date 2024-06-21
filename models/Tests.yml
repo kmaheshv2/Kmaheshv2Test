@@ -1,6 +1,6 @@
 models:
   - name: agents_stg
     columns:
-      - name: AGENT_NAME
+      - name: AGENT_CODE
         tests:
-          - validateField
+          - unique
