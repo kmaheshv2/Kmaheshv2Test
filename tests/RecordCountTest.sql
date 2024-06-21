@@ -1,19 +1,9 @@
-{% set expected_count = {"agents": 100} %}
+{% set expected_count = {"'agents'": 100} %}
 
 {% for table, expected_count in expected_count.items() %}
-    select
-        {{ table }} as table_name,
-        (
-            select count(1)
-            from
-                {{ source("MYSTAGE", "AGT") }} as record_count,
-                {{ expected_count }} as expected_count
-            where
-                (
-                    select count(1)
-                    from {{ source("MYSTAGE", "AGT") }} < {{ expected_count }}
-                )
-        )
+    select {{ table }} as table_name, rec_cnt
+    from (select count(1) as rec_cnt from {{ source("MYSTAGE", "AGT") }})
+    where rec_cnt > {{ expected_count }}
     {% if not loop.last %}
         union all
     {% endif %}
