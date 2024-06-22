@@ -1,0 +1,11 @@
+models:
+  - name: agents_stg
+    columns:
+      - name: AGENT_CODE
+        tests:
+          - unique
+      - name: COMMISSION
+        tests:
+          - not_null:
+              - accepted_values:
+                  values: ["0.11", "0.12", "0.13", "0.14", "0.15"]

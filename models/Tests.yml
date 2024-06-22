@@ -1,6 +1,0 @@
-models:
-  - name: agents_stg
-    columns:
-      - name: AGENT_CODE
-        tests:
-          - unique
